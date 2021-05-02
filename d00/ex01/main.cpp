@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include "YellowBook.hpp"
+#include <stdlib.h>
 
 void
 	set_sub(std::string *origine, std::string *sub) {
@@ -17,6 +18,7 @@ void
 {
 	int i;
 	std::string sub;
+	std::string store;
 
 	i = 0;
 	std::cout << '|' << std::setw(11) << "Index|";
@@ -27,11 +29,14 @@ void
 	{
 
 		std::cout << '|' << std::setw(10) << i + 1 << '|';
-		set_sub(&arr[i].first_name, &sub);
+		store = arr[i].get_firstname();
+		set_sub(&store, &sub);
 		std::cout << std::setw(10) << sub << '|';
-		set_sub(&arr[i].last_name, &sub);
+		store = arr[i].get_lastname();
+		set_sub(&store, &sub);
 		std::cout << std::setw(10) << sub << '|';
-		set_sub(&arr[i].nickname, &sub);
+		store = arr[i].get_nickname();
+		set_sub(&store, &sub);
 		std::cout << std::setw(10) << sub << '|';
 		std::cout << std::endl;
 		i++;
@@ -48,7 +53,7 @@ int
 	{
 		std::cout << "Enter contact index" << std::endl;
 		std::getline(std::cin, contact_s, '\n');
-		contact_i = std::atoi(contact_s.c_str());
+		contact_i = atoi(contact_s.c_str());
 		if (contact_i <= len && contact_i > 0)
 			return (contact_i - 1);
 		std::cout << "Index not in range [1;" << len << ']' << std::endl;
