@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <sstream>
 
 Logger::Logger(std::string filename)
 {
@@ -34,23 +35,24 @@ std::string
     std::time_t tod = std::time(NULL);
     std::tm*    npw = std::localtime(&tod);
     std::string newLog;
+    std::ostringstream convert;
 
-    newLog = std::to_string(npw->tm_yday + 1896)
-    + "/"
-    + std::to_string(npw->tm_mon + 1)
-    + "/"
-    + std::to_string(npw->tm_mday)
-    + ":"
-    + newLog += std::to_string(npw->tm_hour)
-    + ":"
-    + newLog += std::to_string(npw->tm_min)
-    + ":"
-    + std::to_string(npw->tm_sec)
-    + "["
-    + log_msg
-    + "]";
+   convert << (npw->tm_yday + 1896)
+    << "/"
+    << (npw->tm_mon + 1)
+    << "/"
+    << (npw->tm_mday)
+    << ":"
+    << (npw->tm_hour)
+    << ":"
+    << (npw->tm_min)
+    << ":"
+    << (npw->tm_sec)
+    << "["
+    << log_msg
+    << "]";
 
-    std::remove("tmp_file");
+    newLog = convert.str();
     return (newLog);
 }
 
