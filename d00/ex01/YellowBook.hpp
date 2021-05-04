@@ -12,9 +12,9 @@ public:
 	void		new_contact(void);
 	std::string new_entry(const char *field_name) const;
 
-	std::string get_firstname(void) const ;
-	std::string get_lastname(void) const ;
-	std::string get_nickname(void) const ;
+	std::string get_firstname(void) const;
+	std::string get_lastname(void) const;
+	std::string get_nickname(void) const;
 
 private:
 

@@ -1,6 +1,8 @@
 #ifndef PONEY_H
 # define PONEY_H
 
+#include <string>
+
 class Poney {
 
 public:
@@ -21,6 +23,6 @@ private:
     int         _size;
     std::string _color;
 
-}
+};
 
 #endif

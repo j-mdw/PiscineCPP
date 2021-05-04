@@ -70,9 +70,8 @@ int
 
 	std::cout << "What do you want to do, ADD, SEARCH, EXIT?" << std::endl;
 	i = 0;
-	while (1)
+	while (std::getline(std::cin, input, '\n'))
 	{
-		std::getline(std::cin, input, '\n');
 		if (input == "EXIT")
 			break ;
 		else if (input == "ADD")
