@@ -8,14 +8,14 @@ class Logger {
 
 public:
 
-    Logger(char *filename);
+    Logger(std::string filename);
     ~Logger(void);
 
-    void    log(std::string const &dest, std::string const &message) const;
+    void            log(std::string const &dest, std::string const &message) const;
 
 private:
 
-    std::ofstream   _ofs;
+    std::ofstream   *_ofs;
     void            logToConsole(std::string log_msg) const;
     void            logToFile(std::string log_msg) const;
     std::string     makeLogEntry(std::string log_msg) const;
