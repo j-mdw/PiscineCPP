@@ -1,6 +1,7 @@
 #include "ZombieHorde.hpp"
 #include <ctime>
 #include <unistd.h>
+#include <cstdlib>
 
 ZombieHorde::ZombieHorde(int n) : _type("random"), _horde_size(n)  {
     int i;
@@ -53,7 +54,7 @@ Zombie *
     int                 size;
     int                 i;
 
-    std::srand((unsigned)std::time(NULL) + id);
+    std::srand((unsigned)std::time(NULL) + id + clock());
     size = std::rand() % 10 + 3;
     
     for (i = 0; i < size ; i++)

@@ -1,4 +1,5 @@
 #include "ZombieEvent.hpp"
+#include <cstdlib>
 #include <ctime>
 
 ZombieEvent::ZombieEvent(void) : _type("no_type") {
@@ -28,7 +29,7 @@ Zombie *
     int                 size;
     int                 i;
     
-    std::srand(std::time(NULL) + id);
+    std::srand(std::time(NULL) + id + clock());
     size = std::rand() % 10 + 3;
     
     for (i = 0; i < size ; i++)

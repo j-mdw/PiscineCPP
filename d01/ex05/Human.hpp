@@ -12,8 +12,8 @@ public:
 
     const Brain *idenfify(void) const;
     const Brain *idenfify2(void) const;
-    Brain   getyourbrain(void) const;
-    Brain       getbrain(void) const;
+    const Brain &getyourbrain(void) const;
+    const Brain &getbrain(void) const;
 
 private:
 

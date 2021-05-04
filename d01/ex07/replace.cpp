@@ -2,7 +2,7 @@
 #include <fstream>
 
 void
-    search_replace(std::ifstream ifs, std::ofstream ofs, std::string search, std::string replace)
+    search_replace(std::ifstream &ifs, std::ofstream &ofs, std::string search, std::string replace)
 {
     std::string     line;
     size_t          find_pos;
@@ -22,23 +22,22 @@ void
 void
     cpp_sed(std::string filename, std::string search, std::string replace)
 {
-    std::ifstream   ifs(filename);
+    std::ifstream   ifs;
     std::ofstream   ofs;
 
+    ifs.open(filename.c_str());
     if (!ifs.is_open())
     {
         std::cout << filename << " not found" << std::endl;
         return ;
     }
-    ofs.open(filename + ".replace");
+    ofs.open((filename + ".replace").c_str());
     if (!ofs.is_open())
     {
-        ifs.close();
         std::cout << "Failed to create new file" << std::endl;
         return ;
     }
-    ifs.close();
-    ofs.close();
+    search_replace(ifs, ofs, search, replace);
 }
 
 int main(int ac, char **av)
@@ -46,7 +45,7 @@ int main(int ac, char **av)
     if (ac != 4)
     {
         std::cout << "Wrong input" << std::endl;
-        return (EXIT_FAILURE);
+        return (1);
     }
     cpp_sed(av[1], av[2], av[3]);
 

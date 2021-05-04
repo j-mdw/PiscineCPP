@@ -14,7 +14,6 @@ public:
 
 private:
 
-    Brain           *_brain_address;
     int             _amigdula;
     long long int   _cells;
     int             _cortex;
