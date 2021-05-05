@@ -23,7 +23,7 @@ void
     Human::action(std::string const & action_name, std::string const & target)
 {
     void (Human::*human_p[128])(std::string const & target);
-    
+
     human_p[(size_t) 'm'] = &Human::meleeAttack;
     human_p[(size_t) 'r'] = &Human::rangedAttack;
     human_p[(size_t) 'i'] = &Human::intimidatingShout;
