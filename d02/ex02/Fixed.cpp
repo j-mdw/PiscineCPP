@@ -139,17 +139,78 @@ Fixed
 Fixed
    Fixed::operator*(Fixed const & cmp)
 {
-    Fixed tmp;
+    float res;
 
-    tmp._rawBits = this->_rawBits * cmp._rawBits;
+    res = this->toFloat() * cmp.toFloat();
+    Fixed tmp(res);
     return (tmp);
 }
 
 Fixed
    Fixed::operator/(Fixed const & cmp)
 {
-    Fixed tmp;
+    float res;
 
-    tmp._rawBits = this->_rawBits / cmp._rawBits;
+    res = this->toFloat() / cmp.toFloat();
+    Fixed tmp(res);
     return (tmp);
+}
+
+Fixed &
+    Fixed::operator++(void)
+{
+    this->_rawBits++;
+    return (*this);
+}
+
+Fixed &
+    Fixed::operator--(void)
+{
+    this->_rawBits--;
+    return (*this);
+}
+
+float
+    Fixed::operator++(int)
+{
+    float val = this->toFloat();
+    this->_rawBits++;
+    return (val);
+}
+
+float
+    Fixed::operator--(int)
+{
+    float val = this->toFloat();
+    this->_rawBits--;
+    return (val);
+}
+
+Fixed & 
+    Fixed::min(Fixed & v1, Fixed & v2)
+{
+    if (v1.getRawBits() < v2.getRawBits())
+        return (v1);
+    return (v2);
+}
+Fixed const & 
+    Fixed::min(Fixed const & v1, Fixed const & v2)
+{
+    if (v1.getRawBits() <= v2.getRawBits())
+        return (v1);
+    return (v2);
+}
+Fixed & 
+    Fixed::max(Fixed & v1, Fixed & v2)
+{
+    if (v1.getRawBits() >= v2.getRawBits())
+        return (v1);
+    return (v2);
+}
+Fixed const &
+    Fixed::max(Fixed const & v1, Fixed const & v2)
+{
+    if (v1.getRawBits() >= v2.getRawBits())
+        return (v1);
+    return (v2);
 }
