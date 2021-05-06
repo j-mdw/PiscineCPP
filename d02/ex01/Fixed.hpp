@@ -9,8 +9,8 @@ public:
 
     Fixed(void);
     Fixed(Fixed const & src);
-    Fixed(int val);
-    Fixed(float val);
+    Fixed(const int val);
+    Fixed(const float val);
     ~Fixed(void);
 
     Fixed & operator=(Fixed const & src);
