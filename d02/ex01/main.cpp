@@ -3,6 +3,7 @@
 
 int main( void )
 {
+    std::cout << "##### 42 Tests ######" << std::endl;
     {
         Fixed a;
         Fixed const b( 10 );
@@ -18,6 +19,8 @@ int main( void )
         std::cout << "c is " << c.toInt() << " as integer" << std::endl;
         std::cout << "d is " << d.toInt() << " as integer" << std::endl;
     }
+
+    std::cout << std::endl << "##### My Tests ######" << std::endl;
     {
         Fixed a;
         Fixed b( a );

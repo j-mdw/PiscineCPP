@@ -13,13 +13,13 @@ Fixed::Fixed(Fixed const & src)
     *this = src;
 }
 
-Fixed::Fixed(int val)
+Fixed::Fixed(const int val)
 {
     std::cout << "Int constructor called" << std::endl;
     this->_rawBits = val << this->fracBits;
 }
 
-Fixed::Fixed(float val)
+Fixed::Fixed(const float val)
 {
     float cpy = val;
 
