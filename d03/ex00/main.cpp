@@ -26,6 +26,7 @@ main(void)
     g2.beRepaired(200);
     std::cout << g2.getHitPoints() << ": " << g2.getName() << " HP" << std::endl;
     g2.beRepaired(20);
+
     std::cout << g2.getHitPoints() << ": " << g2.getName() << " HP" << std::endl;
     return (0);
 }

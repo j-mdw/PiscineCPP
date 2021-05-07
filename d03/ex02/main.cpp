@@ -6,10 +6,6 @@
 int
 main(void)
 {
-    ClapTrap ct;
-
-    std::cout << ct.getName() << std::endl;// Test as name is empty at this point
-
     std::cout << std::endl << "----- Frag Trap -----"
     << std::endl << std::endl;
     {

@@ -64,9 +64,9 @@ main(void)
         std::cout << std::endl;
 
         st1.vaulthunter_dot_exe("David");
+        st1.ninjaShoebox(n1);
         st1.rangedAttack("TOm");
         st1.meleeAttack("Heir");
-        st1.ninjaShoebox(n1);
         st1.takeDamage(200);
         st1.beRepaired(9000);
         std::cout << std::endl;
