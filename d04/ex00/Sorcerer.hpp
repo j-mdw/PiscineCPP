@@ -8,7 +8,6 @@
 class Sorcerer {
 
 public:
-
     Sorcerer(std::string name, std::string title);
     Sorcerer(Sorcerer const & src);
     ~Sorcerer(void);
@@ -19,10 +18,8 @@ public:
     std::string getTitle(void) const;
     void        polymorph(Victim const &) const;
 
-protected:
-    Sorcerer(void);
-
 private:
+    Sorcerer(void);
     std::string name;
     std::string title;
 

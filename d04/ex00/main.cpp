@@ -1,6 +1,7 @@
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
+#include "Tutu.hpp"
 
 int main(void)
 {
@@ -43,6 +44,20 @@ int main(void)
         std::cout << v2;
         std::cout << "\n---Peon copy constructor---\n" << std::endl; 
         Peon v3(v2);
+        std::cout << v3;
+        v3.getPolymorphed();
+    }
+    std::cout << "\n-----Tutu Tests-----\n" << std::endl;
+    {
+        Tutu v1("Tuta");
+        Tutu v2("Tuto");
+    
+        std::cout << v1 << v2;
+        std::cout << "\n---Tutu = operator---\n" << std::endl;
+        v2 = v1;
+        std::cout << v2;
+        std::cout << "\n---Tutu copy constructor---\n" << std::endl; 
+        Tutu v3(v2);
         std::cout << v3;
         v3.getPolymorphed();
     }

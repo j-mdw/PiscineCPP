@@ -11,7 +11,7 @@ public:
 
     RadScorpion(void);
     RadScorpion(RadScorpion const & src);
-    ~RadScorpion(void);
+    virtual ~RadScorpion(void);
 
     RadScorpion &  operator=(RadScorpion const & src);
 

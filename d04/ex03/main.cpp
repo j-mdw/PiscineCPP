@@ -31,21 +31,22 @@ int main()
         src->learnMateria(new Cure()); 
         src->learnMateria(new Ice());
         src->learnMateria(new Cure());
-        src->learnMateria(new Ice());
-        src->learnMateria(new Cure());
 
         ICharacter* me = new Character("me");
-        AMateria* tmp;
+        AMateria* tmp = new Ice();
         AMateria* tmp1;
         AMateria* tmp2;
+        AMateria* tmp3;
 
         tmp1 = src->createMateria("ice");
         me->equip(tmp1);
+        tmp3 = tmp1->clone();
+        std::cout << tmp3->getType() << std::endl;
         tmp2 = src->createMateria("cure");
         me->equip(tmp2);
-        tmp = src->createMateria("ice");
-        me->equip(tmp);
-        tmp = src->createMateria("cure");
+        me->equip(tmp3);
+
+        *tmp = *tmp2;
         me->equip(tmp); 
         ICharacter* bob = new Character("bob");
         me->use(0, *bob);

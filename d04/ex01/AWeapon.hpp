@@ -11,7 +11,7 @@ public:
     AWeapon(void);
     AWeapon(std::string const & name, int apcost, int damage);
     AWeapon(AWeapon const & src);
-    ~AWeapon(void);
+    virtual ~AWeapon(void);
 
     AWeapon &  operator=(AWeapon const & src);
 

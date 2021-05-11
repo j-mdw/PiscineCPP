@@ -5,6 +5,8 @@
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
 #include "Character.hpp"
+#include "Armagedon.hpp"
+#include "TinyAnt.hpp"
 
 int main(void)
 {
@@ -48,6 +50,37 @@ int main(void)
         rs1.takeDamage(100);
         std::cout << rs1;
     }
+    {
+        Character* me = new Character("meme");
+        std::cout << *me;
+        Enemy* b = new RadScorpion();
+        Enemy* c = new SuperMutant();
+        AWeapon* pr = new PlasmaRiffle();
+        me->equip(pr);
+        std::cout << *me;
+        me->attack(b);
+        me->attack(b);
+        me->attack(b);
+        AWeapon *pf = new PowerFist();
+        me->equip(pf);
+        me->attack(b);
+        me->attack(c);
+        AWeapon *ar = new Armagedon();
+        me->equip(ar);
+        me->attack(c);
+        me->attack(c);
+        me->recoverAP();
+        me->recoverAP();
+        me->recoverAP();
+        me->attack(c);
+        me->recoverAP();
+        Enemy *a = new TinyAnt();
+        me->attack(a);
+        delete pr;
+        delete pf;
+        delete ar;
+        delete me;
+    }
     std::cout << "\n\n-------42 Tests----------\n" << std::endl;
     {
         Character* me = new Character("me");
@@ -78,6 +111,9 @@ int main(void)
         me->attack(c);
         std::cout << *me;
         me->attack(c);
-        std::cout << *me;    
+        std::cout << *me;
+        delete me;
+        delete pr;
+        delete pf;   
     }
 }

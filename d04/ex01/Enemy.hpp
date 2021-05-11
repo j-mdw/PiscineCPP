@@ -8,7 +8,6 @@ class Enemy {
 
 public:
 
-    Enemy(void);
     Enemy(int hp, std::string const & type);
     Enemy(Enemy const & src);
     virtual ~Enemy(void);
@@ -23,6 +22,7 @@ public:
 protected:
     std::string type;
     int         hp;
+    Enemy(void);
 
 private:
 

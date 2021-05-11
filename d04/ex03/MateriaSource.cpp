@@ -32,7 +32,7 @@ MateriaSource::learnMateria(AMateria* m)
 {
     if (this->materiaCount < 4)
     {   
-        this->mArr[this->materiaCount] = m->clone();
+        this->mArr[this->materiaCount] = m;
         this->materiaCount++;
     }
 }
