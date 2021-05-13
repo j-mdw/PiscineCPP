@@ -31,7 +31,7 @@ ShrubberyCreationForm::action(void) const
 {
     std::ofstream ofs;
 
-    ofs.open(this->getTarget() + "_shrubbery");
+    ofs.open((this->getTarget() + "_shrubbery").c_str());
     if (ofs.is_open())
     {   
         ofs <<
