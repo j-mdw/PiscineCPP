@@ -4,6 +4,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int
 main(void)
@@ -82,5 +83,22 @@ main(void)
         {
             std::cout << e.what();
         }
+    }
+    std::cout << "-----Test 3-----" << std::endl;
+    try {
+        Intern i1;
+        Form *f1;
+        Form *f2;
+        Form *f3;
+
+        f1 = i1.makeForm("Tagada", "Bob");
+        f1 = i1.makeForm("robotomy request", "Ela");
+        f2 = i1.makeForm("pardon request", "Johny");
+        f3 = i1.makeForm("shrubbery creation", "Cindrilla");
+        std::cout << *f3;
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what();
     }
 }

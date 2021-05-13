@@ -6,7 +6,6 @@
 # include "RobotomyRequestForm.hpp"
 # include "ShrubberyCreationForm.hpp"
 
-
 class Intern {
 
 public:
@@ -19,9 +18,9 @@ public:
     Form * makeForm(std::string const & formName, std::string const & target) const;
 
 private:
-    Form *newpres(void) const;
-    Form *newrobot(void) const;
-    Form *newshrub(void) const;
+    Form *newpres(std::string const & target) const;
+    Form *newrobot(std::string const & target) const;
+    Form *newshrub(std::string const & target) const;
 };
 
 #endif

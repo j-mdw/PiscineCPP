@@ -12,31 +12,32 @@ Intern::~Intern(void) {}
 Intern &
 Intern::operator=(Intern const & src)
 {
+    (void)src;
     return (*this);
 }
 
 Form *
-Intern::newpres(void) const
+Intern::newpres(std::string const & target) const
 {
-    return (new PresidentialPardonForm());
+    return (new PresidentialPardonForm(target));
 }
 
 Form *
-Intern::newrobot(void) const
+Intern::newrobot(std::string const & target) const
 {
-    return (new RobotomyRequestForm());
+    return (new RobotomyRequestForm(target));
 }
 
 Form *
-Intern::newshrub(void) const
+Intern::newshrub(std::string const & target) const
 {
-    return (new ShrubberyCreationForm());
+    return (new ShrubberyCreationForm(target));
 }
 
 Form *
 Intern::makeForm(std::string const & formName, std::string const & target) const
 {
-    static Form *(Intern::*formArr[])(void) const = {
+    static Form *(Intern::*formArr[])(std::string const & target) const = {
         &Intern::newrobot,
         &Intern::newpres,
         &Intern::newshrub
@@ -49,8 +50,12 @@ Intern::makeForm(std::string const & formName, std::string const & target) const
 
     for (int i = 0; i < 3; i++)
     {
-        if (target.compare(names[i]))
-            return ((this->*formArr[i])());
+        if (!formName.compare(names[i]))
+        {
+            std::cout << "Intern creates form " << formName << std::endl;
+            return ((this->*formArr[i])(target));
+        }
     }
+    std::cout << formName << " is an unknown form" << std::endl;
     return (NULL);
 }
