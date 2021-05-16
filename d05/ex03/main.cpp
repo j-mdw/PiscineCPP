@@ -96,6 +96,9 @@ main(void)
         f2 = i1.makeForm("pardon request", "Johny");
         f3 = i1.makeForm("shrubbery creation", "Cindrilla");
         std::cout << *f3;
+        delete f1;
+        delete f2;
+        delete f3;
     }
     catch (std::exception & e)
     {
