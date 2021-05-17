@@ -9,7 +9,7 @@ serialize(void)
     static char alpha[] = "abcdefghijklmnopqrstuvwxyz";
     std::string *s1 = new std::string;
     std::string *s2 = new std::string;
-    char * serial = new char [(sizeof(std::string *) * 2) + sizeof(int *)];
+    char * serial = new char [(sizeof(std::string *) * 2) + sizeof(int)];
 
     int size = clock() % 10 + 3;
     while (size--)
