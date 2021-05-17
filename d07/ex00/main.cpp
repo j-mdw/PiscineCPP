@@ -4,8 +4,6 @@
 int
 main(void)
 {
-
-
 	std::cout << "\n-----42 TESTS-----\n\n";
 	{
 		int a = 2;

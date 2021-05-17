@@ -3,15 +3,15 @@
 
 template<typename T>
 void
-inc(T * val)
+inc(T & val)
 {
-    (*val)++;
+    val++;
 }
 
 void
-adda(std::string *s)
+adda(std::string & s)
 {
-    *s += 'a';
+    s += 'a';
 }
 
 int
